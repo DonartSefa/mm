@@ -83,7 +83,7 @@ $movies = $getMovies->fetchALL();
                         <a href='<?php echo $movie['movie_readmore'] ?>' target='_blank'>Read more</a>
       </div>
       <div class='card_right__button'>
-        <a href='movie_trailer' target='_blank'>WATCH TRAILER</a>
+        <a href='<?php echo $movie['movie_trailer'] ?>' target='_blank'>WATCH TRAILER</a>
       </div>
     </div>
   </div>
