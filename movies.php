@@ -6,16 +6,13 @@
 <?php
 
 
-    $sql = "SELECT * from users";
-        $getUsers = $conn->prepare($sql);
-        $getUsers->execute();
+    $sql = "SELECT * from movies";
+        $getMovies = $conn->prepare($sql);
+        $getMovies->execute();
 
-        $users= $getUsers->fetchALL();
+        $movies= $getMovies->fetchALL();
         ?>
-
-    <body>
-                <a href="add.php"><h1>Add a Movie</h1></a>
-    </body>
+        
 
         <div class="d-flex" style="height: 100vh">
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
@@ -84,6 +81,10 @@
                 width: 85%;
                 margin: 10px;
             }
+
+            .h1{
+                margin-left: -300px;
+            }
         </style>
     <div class="ngsht">
 
@@ -91,29 +92,33 @@
         <table class="mb-5 table table-bordered" >
         <thead>
             <th>Id</th>
-            <th>Name</th>
-            <th>username</th>
-            <th>Email</th>
+            <th>Movie Name</th>
+            <th>Movie Description</th>
+            <th>Movie Quality</th>
+            <th>Movie Rating</th>
+            <th>Movie Image</th>
             <th>Action</th>
         </thead>
  </div>
         <tbody>
             <?php
-                foreach($users as $user){
-                    if($user['id'] != $_SESSION['id']){
+                foreach($movies as $movie){
+
 
                     ?>
                     <tr>
-                        <td><?php echo $user['id'] ?></td>
-                        <td><?php echo $user['emri'] ?></td>
-                        <td><?php echo $user['username'] ?></td>
-                        <td><?php echo $user['email'] ?></td>
-                        <td><a href="delete.php?id=<?php echo $user['id'] ?>">Delete</a> | <a href="edit.php?id=<?php echo $user['id'] ?>">edit</a></td>
+                        <td><?php echo $movie['id'] ?></td>
+                        <td><?php echo $movie['movie_name'] ?></td>
+                        <td><?php echo $movie['movie_desc'] ?></td>
+                        <td><?php echo $movie['movie_quality'] ?></td>
+                        <td><?php echo $movie['movie_rating'] ?></td>
+                        <td><?php echo $movie['movie_image'] ?></td>
+                        <td><a href="delete.php?id=<?php echo $movie['id'] ?>">Delete</a> | <a href="edit.php?id=<?php echo $movie['id'] ?>">edit</a></td>
                     </tr>
                     <?php
                 
             }
-        }
+
 
             ?>
         </tbody>

@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
             echo "The user does not exist";
         } else {
             if (password_verify($password, $data["password"])) {
+                session_start();
                 $_SESSION['id'] = $data['id'];
                 $_SESSION['username'] = $data['username'];
                 $_SESSION['emri'] = $data['emri'];
