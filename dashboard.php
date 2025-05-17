@@ -13,9 +13,7 @@
         $users= $getUsers->fetchALL();
         ?>
 
-    <body>
-                <a href="add.php"><h1>Add a Movie</h1></a>
-    </body>
+    
 
         <div class="d-flex" style="height: 100vh">
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
