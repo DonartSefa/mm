@@ -14,7 +14,12 @@ CREATE TABLE `movies` (
     `movie_desc` varchar(255) NOT NULL,
     `movie_quality` varchar(255)NOT NULL,
     `movie_rating` varchar(255)NOT NULL,
-    `movie_image` varchar(255)NOT NULL
+    `movie_image` varchar(255)NOT NULL,
+    `movie_year` varchar(255)NOT NULL,
+    `movie_length` varchar(255)NOT NULL,
+    `movie_genre` varchar(255)NOT NULL
+    `movie_trailer` varchar(255)NOT NULL,
+    `movie_readmore` varchar(255)NOT NULL
 );
 
 CREATE TABLE `bookings` (
