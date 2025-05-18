@@ -15,7 +15,8 @@ if (isset($_POST['submit'])) {
     if (empty($movie_name) || empty($movie_desc) || empty($movie_rating) || empty($movie_year) || empty($movie_length) || empty($movie_genre) || empty($movie_trailer) || empty($movie_readmore) || empty($movie_image) ) {
         echo "Please fill all the fields";
     } else {
-        $sql = "INSERT INTO movies(movie_name, movie_desc, movie_rating, movie_year, movie_length, movie_genre, movie_trailer, movie_readmore, movie_image) VALUES (:movie_name, :movie_desc, :movie_rating, :movie_year, :movie_length, :movie_genre, :movie_trailer, :movie_readmore, :movie_image)";
+        $sql = "INSERT INTO movies(movie_name, movie_desc, movie_rating, movie_year, movie_length, movie_genre, movie_trailer, movie_readmore, movie_image) VALUES (:movie_name, :movie_desc, :movie_rating,
+         :movie_year, :movie_length, :movie_genre, :movie_trailer, :movie_readmore, :movie_image)";
         $insertSql = $conn->prepare($sql);
 
 
